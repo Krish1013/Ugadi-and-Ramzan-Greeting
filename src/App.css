@@ -1,38 +1,213 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+
+  background: linear-gradient(120deg, #00a8ff, #00d7f6, #0e7fdd);
+
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.01); /* very transparent */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  padding: 40px;
+  border-radius: 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+
+  max-width: 700px;
+  width: 100%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  font-size: 2.8rem;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: bold;
+
+  background: darkblue;
+  background-size: 600% 600%;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: titleGradient 6s ease infinite;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.form-group {
+  margin-bottom: 25px;
+  text-align: left;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background: #e67e22;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.button-group {
+  margin-top: 15px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  gap: 10px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.festival-options {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.festival-btn {
+  flex: 1;
+  padding: 15px;
+  font-size: 18px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.ugadi-btn {
+  background: #27ae60;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.ramadan-btn {
+  background: #2c3e50;
+  color: #f1c40f;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#greeting-card {
+  margin-top: 30px;
+  padding: 40px;
+  border-radius: 20px;
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+
+.ugadi-card {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url('https://res.cloudinary.com/daa0trmzd/image/upload/v1773382781/db07f198-b2a5-4352-a855-aa961d689221_psxbn7.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.ramadan-card {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('https://res.cloudinary.com/daa0trmzd/image/upload/v1773382983/c8441f83-8d1b-4b26-b23c-9346cb13682e_rzqsk0.png');
+  background-size: cover;
+  background-position: center;
+  color: #ffd700;
+}
+
+.name {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.download-btn {
+  background: #27ae60;
+}
+
+.new-card-btn {
+  background: #3498db;
+}
+
+#history {
+  margin-top: 25px;
+  text-align: left;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.clear-btn {
+  background: #e74c3c;
+}
+
+li {
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+}
+input[type='text'] {
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 1rem;
+
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+
+  background: rgba(255, 255, 255, 0.15); /* transparent glass look */
+  backdrop-filter: blur(6px);
+
+  color: #2c3e50;
+
+  outline: none;
+
+  transition: all 0.3s ease;
+}
+.history-cards {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.history-card {
+  width: 180px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background: white;
+  padding: 10px;
+}
+
+.history-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 5px;
 }
