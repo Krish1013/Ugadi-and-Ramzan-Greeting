@@ -19,6 +19,13 @@ class UgadiGreeting extends Component {
    showForm: true,
   }
 
+  //This ensures localStorage runs only in the browser, not during build. Vercel
+  componentDidMount() {
+    const storedHistory =
+      JSON.parse(localStorage.getItem('greetingHistory')) || []
+    this.setState({history: storedHistory})
+  }
+
   generateGreeting = (name, festival) => {
     const messages = {
       ugadi: [
