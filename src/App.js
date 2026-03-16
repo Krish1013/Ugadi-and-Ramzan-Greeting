@@ -18,6 +18,14 @@ class UgadiGreeting extends Component {
   // showForm with true
    showForm: true,
   }
+  
+  //This ensures localStorage runs only in the browser, not during build. Vercel
+  componentDidMount() {
+    const storedHistory =
+      JSON.parse(localStorage.getItem('greetingHistory')) || []
+    this.setState({history: storedHistory})
+  }
+
 
   //This ensures localStorage runs only in the browser, not during build. Vercel
   componentDidMount() {
@@ -160,7 +168,7 @@ class UgadiGreeting extends Component {
   }
 
   render() {
-    const {name, festival, card, history, step, showForm} = this.state
+    const {name, card, history, step, showForm} = this.state
 
     return (
       <div className="body">
